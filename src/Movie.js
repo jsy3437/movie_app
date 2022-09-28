@@ -6,12 +6,12 @@ function Movie({ title, year, summary, poster, genres }) {
 	return (
 		<div>
 			<img src={poster} alt={title} title={title}></img>
-			<div class="movie__data">
-				<h3 class="movie__title" style={{ backgroundColor: 'red' }}>
+			<div className="movie__data">
+				<h3 className="movie__title" style={{ backgroundColor: 'red' }}>
 					{title}
 				</h3>
-				<h5 class="movie__year">{year}</h5>
-				<p class="movie__summary">{summary}</p>
+				<h5 className="movie__year">{year}</h5>
+				<p className="movie__summary">{summary}</p>
 			</div>
 		</div>
 	);
