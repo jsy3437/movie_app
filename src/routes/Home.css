@@ -13,15 +13,20 @@
 }
 .movies {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(400px, 1fr));
-	grid-gap: 100px;
+	grid-template-columns: repeat(6, minmax(100px, 1fr));
+	grid-gap: 30px;
 	padding: 50px;
 	width: 80%;
 	padding-top: 70px;
 }
+@media screen and (max-width: 1280px) {
+	.movies {
+		grid-template-columns: repeat(4, minmax(100px, 1fr));
+	}
+}
 @media screen and (max-width: 1090px) {
 	.movies {
-		grid-template-columns: 1fr;
+		grid-template-columns: repeat(4, minmax(50px, 1fr));
 		width: 100%;
 	}
 }
