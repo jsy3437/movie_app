@@ -17,7 +17,7 @@ class Home extends React.Component {
 		} = await axios.get(
 			'https://yts-proxy.now.sh/list_movies.json?sort_by=rating'
 		);
-		this.setState({ movies, isLoding: false });
+		this.setState({ movies: movies.concat(movies), isLoding: false });
 	};
 
 	componentDidMount() {
@@ -41,10 +41,10 @@ class Home extends React.Component {
 							/>
 						</div>
 						<div className="movies">
-							{movies.map((movie) => {
+							{movies.map((movie, idx) => {
 								return (
 									<Movie
-										key={movie.id}
+										key={idx}
 										id={movie.id}
 										year={movie.year}
 										title={movie.title}
