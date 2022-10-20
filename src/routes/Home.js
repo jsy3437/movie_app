@@ -18,11 +18,12 @@ class Home extends React.Component {
 			'https://yts-proxy.now.sh/list_movies.json?sort_by=rating'
 		);
 		this.setState({ movies, isLoding: false });
-		console.log(movies);
 	};
+
 	componentDidMount() {
 		this.getMovies();
 	}
+
 	render() {
 		const { isLoding, movies } = this.state;
 		return (
@@ -32,21 +33,28 @@ class Home extends React.Component {
 						<span className="loader__text">Loading...</span>
 					</div>
 				) : (
-					<div className="movies">
-						{movies.map((movie) => {
-							console.log(movie);
-							return (
-								<Movie
-									key={movie.id}
-									id={movie.id}
-									year={movie.year}
-									title={movie.title}
-									summary={movie.summary}
-									poster={movie.medium_cover_image}
-									genres={movie.genres}
-								/>
-							);
-						})}
+					<div className="movie__warp">
+						<div className="bnn__box">
+							<img
+								className="bnn__img"
+								src="https://t1.daumcdn.net/cfile/tistory/2511D4395466C11111?original"
+							/>
+						</div>
+						<div className="movies">
+							{movies.map((movie) => {
+								return (
+									<Movie
+										key={movie.id}
+										id={movie.id}
+										year={movie.year}
+										title={movie.title}
+										summary={movie.summary}
+										poster={movie.medium_cover_image}
+										genres={movie.genres}
+									/>
+								);
+							})}
+						</div>
 					</div>
 				)}
 			</section>
