@@ -9,4 +9,6 @@ body {
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	background-color: #0f0f0f;
 	height: 100%;
+	color: white;
+	word-break: keep-all;
 }
