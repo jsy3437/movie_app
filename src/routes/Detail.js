@@ -11,6 +11,9 @@ class Detail extends React.Component {
 
 	render() {
 		const { location } = this.props;
+		const ratingToPercent = location.state.rating * 10;
+		const ratingStarArr = ['★', '★', '★', '★', '★'];
+		const ratingStarEl = ratingStarArr.map((star) => <span>{star}</span>);
 
 		if (location.state) {
 			return (
@@ -21,6 +24,18 @@ class Detail extends React.Component {
 						</div>
 						<div className="detail__right">
 							<h2>{location.state.title}</h2>
+							<div className="ratings">
+								<div className="rating__star">
+									<div
+										className="ratings__fill"
+										style={{ width: ratingToPercent + '%' }}
+									>
+										{ratingStarEl}
+									</div>
+									<div className="ratings__base">{ratingStarEl}</div>
+								</div>
+								<p>({location.state.rating / 2})</p>
+							</div>
 							<p>{location.state.year}</p>
 							<p>{location.state.genres.join(', ')}</p>
 							<p>{location.state.summary}</p>
