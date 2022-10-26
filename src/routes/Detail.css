@@ -12,3 +12,27 @@
 .detail__right > p:last-child {
 	font-size: 18px;
 }
+.ratings {
+	display: flex;
+	align-items: baseline;
+	margin-top: -15px;
+	font-size: 30px;
+}
+.rating__star {
+	position: relative;
+	width: max-content;
+}
+.ratings__fill {
+	position: absolute;
+	top: 0;
+	color: #ff0000;
+	z-index: 1;
+	overflow: hidden;
+}
+.ratings__base {
+	color: #969090;
+}
+.ratings > p {
+	font-size: 15px;
+	margin-left: 10px;
+}
