@@ -11,4 +11,5 @@ body {
 	height: 100%;
 	color: white;
 	word-break: keep-all;
+	user-select: none;
 }
