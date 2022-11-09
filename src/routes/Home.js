@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Movie from '../components/Movie';
 import './Home.css';
+import bannerImg from '../images/banner.webp';
 
 class Home extends React.Component {
 	state = {
@@ -35,10 +36,7 @@ class Home extends React.Component {
 				) : (
 					<div className="movie__warp">
 						<div className="bnn__box">
-							<img
-								className="bnn__img"
-								src="https://t1.daumcdn.net/cfile/tistory/2511D4395466C11111?original"
-							/>
+							<img className="bnn__img" src={bannerImg} />
 						</div>
 						<div className="movies">
 							{movies.map((movie, idx) => {
