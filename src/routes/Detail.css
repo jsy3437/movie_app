@@ -43,3 +43,18 @@
 	font-size: 1.5rem;
 	margin-left: 1rem;
 }
+@media screen and (max-width: 1200px) {
+	.detail__warp {
+		grid-template-columns: repeat(2, minmax(450px, 1fr));
+	}
+}
+@media screen and (max-width: 900px) {
+	.detail__warp {
+		grid-template-columns: repeat(1, minmax(450px, 1fr));
+	}
+}
+@media screen and (max-width: 500px) {
+	.detail__warp {
+		grid-template-columns: repeat(1, minmax(260px, 1fr));
+	}
+}
