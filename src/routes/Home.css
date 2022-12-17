@@ -1,4 +1,5 @@
 .container {
+	margin-top: 2rem;
 	height: 100%;
 	display: flex;
 	justify-content: center;
@@ -11,17 +12,125 @@
 	align-items: center;
 	font-weight: 300;
 }
+.loader__dot {
+	position: relative;
+	width: 15px;
+	height: 15px;
+	border-radius: 12px;
+	background-color: #fff;
+}
+.loader__dot::before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	height: 15px;
+	width: 15px;
+	border-radius: 12px;
+	-webkit-animation: loaderBefore 1s ease-in-out infinite;
+	animation: loaderBefore 1s ease-in-out infinite;
+}
+.loader__dot::after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	height: 15px;
+	width: 15px;
+	border-radius: 12px;
+	-webkit-animation: loaderAfter 1s ease-in-out infinite;
+	animation: loaderAfter 1s ease-in-out infinite;
+}
+@-webkit-keyframes loaderBefore {
+	0% {
+		left: -25px;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+	50% {
+		left: 0px;
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+	100% {
+		left: -25px;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+}
+@keyframes loaderBefore {
+	0% {
+		left: -25px;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+	50% {
+		left: 0px;
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+	100% {
+		left: -25px;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+}
+@-webkit-keyframes loaderAfter {
+	0% {
+		left: 25px;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+	50% {
+		left: 0px;
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+	100% {
+		left: 25px;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+}
+@keyframes loaderAfter {
+	0% {
+		left: 25px;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+	50% {
+		left: 0px;
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+	100% {
+		left: 25px;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+}
+.movie__warp {
+	width: 100%;
+}
+.bnn__box {
+	width: 100vw;
+	padding: 2rem 0;
+}
+.bnn__img {
+	width: 100%;
+}
 .movies {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(400px, 1fr));
-	grid-gap: 100px;
-	padding: 50px;
+	grid-template-columns: repeat(6, minmax(100px, 1fr));
+	grid-gap: 3rem;
+	padding: 5rem 2rem;
 	width: 80%;
-	padding-top: 70px;
+	padding-top: 7rem;
+	margin: auto;
+}
+@media screen and (max-width: 1280px) {
+	.movies {
+		grid-template-columns: repeat(4, minmax(100px, 1fr));
+	}
 }
 @media screen and (max-width: 1090px) {
 	.movies {
-		grid-template-columns: 1fr;
+		grid-template-columns: repeat(4, minmax(50px, 1fr));
 		width: 100%;
+	}
+	.bnn__box {
+		padding: 3rem 0 0;
+		margin-bottom: -30px;
+	}
+}
+@media screen and (max-width: 300px) {
+	.movies {
+		grid-template-columns: repeat(3, minmax(50px, 1fr));
 	}
 }

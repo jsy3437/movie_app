@@ -1,19 +1,59 @@
 .about__container {
-	box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-		0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-	padding: 20px;
+	padding: 2rem 0;
 	border-radius: 5px;
-	background-color: white;
+	background-color: rgb(241, 241, 241);
+	color: #000;
 	margin: 0 auto;
-	margin-top: 100px;
-	width: 100%;
-	max-width: 400px;
+	margin-top: 10rem;
+	max-width: 900px;
+	width: 90%;
 	font-weight: 300;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(400px, 1fr));
+	grid-gap: 2rem;
 }
 .about__container span:first-child {
-	font-size: 20px;
+	font-size: 2rem;
 }
 .about__container span:last-child {
 	display: block;
-	margin-top: 10px;
+	margin-top: 1rem;
+}
+.doll_box {
+	max-width: 320px;
+}
+.doll__box > img {
+	width: 100%;
+}
+.text__box h2 {
+	font-size: 3rem;
+	margin: 0 0 -0.5rem;
+}
+.text__box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 2rem;
+}
+.text__box h5 {
+	margin: 1.3rem 0;
+}
+.text__box p {
+	font-size: 1.4rem;
+	display: flex;
+	align-items: center;
+}
+.text__box p > img {
+	width: 14px;
+	margin-right: 8px;
+}
+@media screen and (max-width: 800px) {
+	.about__container {
+		max-width: 80vw;
+		max-height: 90vh;
+		margin-top: 8rem;
+		margin-bottom: 2rem;
+		grid-template-columns: repeat(1, minmax(180px, 1fr));
+		justify-items: center;
+	}
 }
